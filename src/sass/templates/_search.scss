@@ -1,0 +1,21 @@
+.search {
+    background: {
+        image: url('https://picsum.photos/seed/picsum/1000/500');
+        repeat: no-repeat;
+        position: bottom;
+        size: cover;
+    }
+    display: block;
+    padding: cell(40) cell(10) cell(30);
+    @include up($s960) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    &__button {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+}

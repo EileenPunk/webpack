@@ -1,0 +1,77 @@
+.dropdown {
+    margin: 0 0 cell(3);
+    position: relative;
+    @include up($s960) {
+        margin: 0 cell(3) cell(10) 0;
+    }
+    &.open {
+        .dropdown {
+            &__menu { display: block; }
+            &__button {
+                border-bottom-right-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+        }
+    }
+    &__button {
+        @include typo(button);
+        align-items: center;
+        background-color: rgba($c-white, .7);
+        border: 1px solid $c-white;
+        border-radius: 4px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        padding: cell(2) cell(12) cell(2) cell(5);
+        position: relative;
+        width: 100%;
+
+        &::after {
+            @include arrow(down, $c-neutroDark, 5px);
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &:hover {
+            @include transition();
+            background: $c-neutroLightest;
+        }
+    }
+    &__menu {
+        @include typo(button);
+        background-color: $c-white;
+        border: 1px solid $c-neutroLight;
+        border-radius: 4px;
+        display: none;
+        left: 0;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        z-index: 1;
+        
+        li {
+            align-items: center;
+            border-bottom: 1px solid $c-neutroLight;
+            color: $c-black;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            padding: cell(3);
+            &:hover { background-color: $c-neutroLightest; }
+            &:last-child { border: 0; }
+        
+        label {
+            cursor: pointer;
+            width: 100%;
+        }
+        input {
+            cursor: pointer;
+            display: inline-block;
+            margin-right: cell(5);
+        }
+        }
+    }
+}

@@ -1,0 +1,41 @@
+@import "media-queries";
+
+/// Wrapper constructor using an array of breakpoints as definition
+/// You can call this method into any object with custom breakpoints
+@mixin wrapper($rules: $breakpoints) {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  @each $rule in $rules {
+    $rule-breakpoint: nth($rule, 2);
+    $rule-padding: nth($rule, 3);
+    $rule-maxwidth: nth($rule, 4);
+    @if $rule-padding or $rule-maxwidth {
+      @include up($rule-breakpoint) {
+        @if $rule-padding {
+          padding-left: $rule-padding;
+          padding-right: $rule-padding;
+        }
+        @if $rule-maxwidth {
+          max-width: $rule-maxwidth;
+        }
+      }
+    }
+  }
+}
+
+@mixin wrapperLSpacing($property: margin-right) {
+  #{$property}: $wrapperLSpacing0;
+  @include up($s480) { #{$property}: $wrapperLSpacing480; }
+  @include up($s640) { #{$property}: $wrapperLSpacing640; }
+  @include up($s768) { #{$property}: $wrapperLSpacing768; }
+}
+
+@mixin wrapperLSpacingFull($property: margin-right) {
+  #{$property}: $wrapperLSpacing0;
+  @include up($s480) { #{$property}: $wrapperLSpacing480; }
+  @include up($s640) { #{$property}: $wrapperLSpacing640; }
+  @include up($s768) { #{$property}: $wrapperLSpacing768; }
+  @include up($s1280) { #{$property}: $wrapperLSpacing1280; }
+  @include up($s1920) { #{$property}: $wrapperLSpacing1920; }
+}

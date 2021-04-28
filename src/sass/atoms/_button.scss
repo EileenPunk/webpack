@@ -1,0 +1,54 @@
+.button {
+    @include transition();
+    @include typo(button);
+    border: {
+        radius: cell(6);
+        style: solid;
+        width: 1px;
+    }
+    cursor: pointer;
+    display: inline-block;
+    padding: cell(3) cell(7);
+    &--arrow {
+        align-items: center;
+        display: inline-flex;
+        span {
+            line-height: 1.3;
+            padding-bottom: 3px;
+        }
+        svg {
+            height: 16px;
+            margin-left: cell(3);
+            width: 20px;
+        }
+        svg path { fill: $c-white; }
+    }
+}
+
+$buttons: (
+    (primary, $c-white, $c-primary, $c-primary, $c-white, $c-primaryDarker, $c-primaryDarker),
+    (black, $c-white, $c-black, $c-black, $c-white, $c-black, $c-black),
+    (hollow, $c-primary, transparent, $c-primary, $c-white, $c-primaryDarker, $c-primaryDarker),
+);
+
+@each $b in $buttons {
+    $type: nth($b, 1);
+    $c: nth($b, 2);
+    $bg: nth($b, 3);
+    $bc: nth($b, 4);
+    $c-hover: nth($b, 5);
+    $bg-hover: nth($b, 6);
+    $bc-hover: nth($b, 7);
+    .button.button--#{$type} {
+        background-color: $bg;
+        border-color: $bc;
+        color: $c;
+        svg path { fill: $c; }
+        &:hover {
+            background-color: $bg-hover;
+            border-color: $bc-hover;
+            color: $c-hover;
+            svg path { fill: $c-hover; }
+        }
+    }
+}

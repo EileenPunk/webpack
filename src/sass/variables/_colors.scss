@@ -1,0 +1,36 @@
+/// Corporative Available Colors
+
+$c-white: 				#FFF;
+$c-black: 				#000;
+
+$c-neutroDarkest:       #181818;
+$c-neutroDark:          #535353;
+$c-neutro: 				#a5a5a5;
+$c-neutroLight:         #E8E8E8;
+$c-neutroLightest: 		#F9F9F9;
+
+$c-blueDarker: 			#001fa2;
+$c-blueDark: 			#0026c7;
+$c-blue: 				#0d35dc;
+
+$c-red: 				#f7332d;
+$c-redlight: 			#ff8581;
+
+$c-facebook:            #3b5998;
+$c-linkedin:            #0e76a8;
+$c-xing:                #126567;
+
+/// LPA Colors
+
+$c-background:		    $c-neutroLightest;
+
+$c-primaryDarker: 		$c-blueDarker;
+$c-primaryDark: 		$c-blueDark;
+$c-primary: 			$c-blue;
+
+$c-error: 		        $c-red;
+$c-errorLight:      	$c-redlight;
+
+$c-focus: 				$c-blue;
+$c-border:              $c-neutroLight;
+$c-borderDark:          rgba($c-neutro, .4);

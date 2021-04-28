@@ -1,0 +1,38 @@
+/// Arrows -- using borders
+$arrow-color: $c-primary;
+$arrow-size: 4px;
+$arrow-direction: bottom;
+
+@mixin arrow($direction: $arrow-direction, $color: $arrow-color, $size: $arrow-size) {
+  //@if (valid-position($direction) == false) {
+  //  @error "Direction of the arrow decorator should be: top | right | bottom | left";
+  //}
+  @include transition();
+  content: '';
+  display: block;
+  height: 0;
+  position: absolute;
+  width: 0;
+  $directions: ('down', 'left', 'up', 'right');
+  $positions: ('top', 'right', 'bottom', 'left');
+  @each $position in $positions {
+    $index: index($positions, $position);
+    @if nth($directions, $index) == $direction {
+      border-#{$position}: $size solid $color;
+    } @else {
+      border-#{$position}: $size solid transparent;
+    }
+  }
+}
+
+@mixin arrowBefore($direction: $arrow-direction, $color: $arrow-color, $size: $arrow-size) {
+  &::before {
+    @include arrow($direction, $color, $size);
+  }
+}
+
+@mixin arrowAfter($direction: $arrow-direction, $color: $arrow-color, $size: $arrow-size) {
+  &::after {
+    @include arrow($direction, $color, $size);
+  }
+}

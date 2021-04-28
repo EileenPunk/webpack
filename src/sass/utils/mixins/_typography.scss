@@ -1,0 +1,27 @@
+@mixin typo($name: p) {
+  @if map-has-key($typos, $name) {
+    $typo: map-get($typos, $name);
+    @each $name, $value in $typo {
+      #{$name}: $value;
+    }
+  } @else {
+    @error "Typos supported are: #{$valid-typos}";
+  }
+}
+
+@mixin fontSize($name: p) {
+  @if map-has-key($typos, $name) {
+    font-size: map-get(map-get($typos, $name), font-size);
+  } @else {
+    @error "Typos supported are: #{$valid-typos}";
+  }
+}
+
+@mixin plainTextStyling() {
+  h1, h2, h3, h4, h5 { margin: cell(6) 0 cell(3); }
+  h1 { @extend %h1; }
+  h2 { @extend %h2; }
+  h3 { @extend %h3; }
+  h4 { @extend %h4; }
+  h5 { @extend %h5; }
+}

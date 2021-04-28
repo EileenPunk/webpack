@@ -1,0 +1,12 @@
+@font-face {
+  font-family: OpenSans;
+  src: url(fonts/17e98b9e5586529b13ccb1f7af16861c.ttf);
+}
+body {
+  min-height: 100vh;
+  background: #5e003a;
+  color: white;
+  background-image: url(images/4c52d540e23ee49add3d3cb157648ded.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+}

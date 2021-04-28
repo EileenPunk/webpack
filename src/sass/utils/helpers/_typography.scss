@@ -1,0 +1,178 @@
+%baseFont, %h1, %h2, %h3, %h4, %h5, %h6, %heading, %actionLink, %cardTitle {
+  font: {
+    family: inherit;
+    size: inherit;
+    stretch: normal;
+    style: normal;
+  }
+  letter-spacing: normal;
+}
+
+%h1 {
+  font: {
+    size: 38px;
+    weight: 600;
+  }
+  line-height: cell(11.5);
+  @include up($s768) {
+    font-size: 44px;
+    letter-spacing: 0.2px;
+    line-height: cell(14);
+  }
+  @include up($s1280) {
+    font-size: 54px;
+    letter-spacing: 0.4px;
+    line-height: cell(17);
+  }
+  @include up($s1920) {
+    font-size: 60px;
+    line-height: cell(19.5);
+  }
+}
+
+%h2 {
+  font: {
+    size: 30px;
+    weight: 600;
+  }
+  letter-spacing: 0.4px;
+  line-height: cell(9);
+  @include up($s768) {
+    font-size: 36px;
+    line-height: cell(11);
+  }
+  @include up($s1280) {
+    font-size: 40px;
+    line-height: cell(13);
+  }
+  @include up($s1920) {
+    font-size: 44px;
+    line-height: cell(15);
+  }
+}
+
+%h3 {
+  font: {
+    size: 24px;
+    weight: 600;
+  }
+  line-height: cell(7.5);
+  @include up($s768) {
+    font-size: 28px;
+    letter-spacing: 0.2px;
+    line-height: cell(9);
+  }
+  @include up($s1280) {
+    font-size: 30px;
+    line-height: cell(9.5);
+  }
+}
+
+%h4 {
+  font: {
+    size: 20px;
+    weight: 600;
+  }
+  line-height: cell(6.5);
+  @include up($s768) {
+    font-size: 22px;
+    letter-spacing: 0.6px;
+    line-height: cell(7.5);
+  }
+  @include up($s1280) {
+    font-size: 24px;
+    line-height: cell(8.5);
+  }
+}
+
+%h5 {
+  font: {
+    size: 16px;
+    weight: 600;
+  }
+  line-height: cell(6.5);
+  @include up($s1280) {
+    font-size: 20px;
+    letter-spacing: 0.4px;
+    line-height: cell(7.5);
+  }
+}
+
+%p {
+  font: {
+    size: 16px;
+    weight: 400;
+  }
+  line-height: cell(6);
+  @include up($s1280) {
+    font-size: 18px;
+    letter-spacing: 0.4px;
+    line-height: cell(7);
+  }
+}
+
+%claim {
+  font: {
+    size: 18px;
+    weight: 300;
+  }
+  line-height: cell(6.5);
+  @include up($s1280) {
+    font-size: 24px;
+    letter-spacing: 0.2px;
+    line-height: cell(8.5);
+  }
+}
+
+%featureClaim {
+  font: {
+    size: 22px;
+    weight: 300;
+  }
+  line-height: cell(6.5);
+  @include up($s768) {
+    font-size: 32px;
+    line-height: cell(11);
+  }
+  @include up($s1920) { font-size: 34px; }
+}
+
+%featureText {
+  font: {
+    size: 16px;
+    weight: 400;
+  }
+  letter-spacing: 0.4px;
+  line-height: cell(6);
+  @include up($s1280) {
+    font-size: 18px;
+    line-height: cell(6.5);
+  }
+  @include up($s1440) {
+    font-size: 20px;
+    line-height: cell(7);
+  }
+}
+
+%tag {
+  font: {
+    size: 16px;
+    weight: 600;
+  }
+  letter-spacing: 0.8px;
+  opacity: .8;
+  text-transform: uppercase;
+}
+
+//  typography pseudo classnames % for use on inheritance
+//  that script generates from $typos[] variable:
+//  %h1 {..}, %h2 {..} etc with all properties used for each font set
+@each $typo,
+$properties in $typos {
+  %#{$typo} {
+    @each $name,
+    $value in $properties {
+      #{$name}: $value;
+    }
+  }
+}

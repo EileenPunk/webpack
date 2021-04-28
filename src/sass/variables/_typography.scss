@@ -1,0 +1,26 @@
+$t-default-thin: 200;
+$t-default-light: 300;
+$t-default-regular: 400;
+$t-default-medium: 500;
+$t-default-demi: 600;
+$t-default-bold: 700;
+
+$t-default: "neue-haas-unica", "Open Sans", Helvetica, Arial, "Microsoft Yahei", "微软雅黑", "华文细黑", sans-serif;
+
+$base-font-size: 18px;
+$base-line-height: 1.5;
+
+$valid-typos: 'menuTitle | menuLink | submenu | menuLang | footerLink';
+$typos: (
+        menuTitle: (
+                font-size: 20px,
+                font-weight: 600,
+                line-height: normal
+        ),
+        button: (
+                font-size: 16px,
+                font-weight: 400,
+                letter-spacing: normal,
+                line-height: normal,
+        )
+);

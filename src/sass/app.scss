@@ -1,0 +1,19 @@
+@import "variables/base";
+@import "initialize/base";
+@import "utils/base";
+
+@import "atoms/base";
+@import "organisms/base";
+@import "templates/base";
+
+@import "../../node_modules/@splidejs/splide/dist/css/splide.min";
+
+@font-face {
+    font-family: OpenSans;
+    src: url('../fonts/OpenSans-Regular.ttf');
+}
+
+
+body {
+    background-image: url('../images/cat.jpg');
+}
