@@ -1,4 +1,10 @@
 {
+  "name": "webpack",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "AilinPeng",
+  "license": "UNLICENSED",
   "scripts": {
     "start": "webpack serve --config webpack.config.js",
     "build": "webpack --config webpack.config.js"
